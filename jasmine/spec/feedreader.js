@@ -72,25 +72,35 @@ $(
     });
     // "New Feed Selection" Test
     describe("New Feed Selection", function() {
-      let firstFeed, secondFeed, thirdFeed, FourthFeed;
-      firstFeed = document.querySelector(".feed").innerText;
+      let firstFeed,
+        secondFeed,
+        thirdFeed,
+        FourthFeed,
+        contentArray = [];
 
       beforeEach(function(done) {
-        loadFeed(1, function() {
+        loadFeed(0, () => {
+          firstFeed = document.querySelector(".feed").innerText;
+          contentArray.push(firstFeed);
+        });
+        loadFeed(1, () => {
           secondFeed = document.querySelector(".feed").innerText;
+          contentArray.push(secondFeed);
         });
         loadFeed(2, () => {
           thirdFeed = document.querySelector(".feed").innerText;
+          contentArray.push(thirdFeed);
         });
         loadFeed(3, () => {
           FourthFeed = document.querySelector(".feed").innerText;
+          contentArray.push(FourthFeed);
           done();
         });
+
         // test that ensures when a new feed is loaded
         // the content actually changes.
       });
       it("content changes when new feed loaded", function(done) {
-        let contentArray = [firstFeed, secondFeed, thirdFeed, FourthFeed];
         let findDuplicatedContent = arr =>
           arr.filter((item, index) => arr.indexOf(item) != index);
         expect(findDuplicatedContent(contentArray).length == 0).toBe(true);
