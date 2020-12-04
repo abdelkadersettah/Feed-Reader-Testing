@@ -4,7 +4,7 @@ This is project given to me by Udacity for my NanoDegree course, using Jasmine t
 
 ## How to Run Appilcation
 
-Download repositrory from <a href="https://github.com/setaek/Feed-Reader-Testing.git">here.</a>
+Download repositrory from <a href="https://github.com/abdelkadersettah/Feed-Reader-Testing.git">here.</a>
 Then open the index.html file in a browser.
 
 ## Tests That Were Implemented
